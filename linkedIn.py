@@ -48,52 +48,63 @@ def search_and_send_request():
 
     # Iterate over each group link
     for link in group_links:
-        link.click()
-        time.sleep(3)
-        # Find the "Create a poll" button by aria-label
-        create_poll_button = driver.find_element(By.CSS_SELECTOR, """button[aria-label='Create a poll']""")
-        # Click on the button
-        create_poll_button.click()
-        time.sleep(3)
-        # Find the input field by placeholder
-        question_input = driver.find_element(By.CSS_SELECTOR, '[placeholder="E.g., How do you commute to work?"]')
-        # Enter text into the input field
-        question_input.send_keys(parameters.poll_question)
-        time.sleep(3)
-        # Find the input field by placeholder
-        option_1 = driver.find_element(By.ID, 'poll-option-1')
-        # Enter text into the input field
-        option_1.send_keys(parameters.option_1)
-        time.sleep(3)
-        # Find the input field by placeholder
-        option_2 = driver.find_element(By.ID, 'poll-option-2')
-        # Enter text into the input field
-        option_2.send_keys(parameters.option_2)
-        time.sleep(3)
-        #Optional: add a new option:
         try:
-            # Find the "Add option" button by text
-            add_option_button = driver.find_element(By.XPATH, '//span[text()="Add option"]')
+            link.click()
+            time.sleep(3)
+            # Find the "Create a poll" button by aria-label
+            create_poll_button = driver.find_element(By.CSS_SELECTOR, """button[aria-label='Create a poll']""")
             # Click on the button
-            add_option_button.click()
+            create_poll_button.click()
             time.sleep(3)
             # Find the input field by placeholder
-            option_3 = driver.find_element(By.ID, 'poll-option-3')
+            question_input = driver.find_element(By.CSS_SELECTOR, '[placeholder="E.g., How do you commute to work?"]')
             # Enter text into the input field
-            option_3.send_keys(parameters.option_3)
+            question_input.send_keys(parameters.poll_question)
             time.sleep(3)
-        except:
-            pass
-     
-        # Find the Poll duration
-        duration_dropdown = Select(driver.find_element(By.CSS_SELECTOR, '[aria-labelledby="polls-duration-label"]'))
+            # Find the input field by placeholder
+            option_1 = driver.find_element(By.ID, 'poll-option-1')
+            # Enter text into the input field
+            option_1.send_keys(parameters.option_1)
+            time.sleep(3)
+            # Find the input field by placeholder
+            option_2 = driver.find_element(By.ID, 'poll-option-2')
+            # Enter text into the input field
+            option_2.send_keys(parameters.option_2)
+            time.sleep(3)
+            #Optional: add a new option:
+            try:
+                # Find the "Add option" button by text
+                add_option_button = driver.find_element(By.XPATH, '//span[text()="Add option"]')
+                # Click on the button
+                add_option_button.click()
+                time.sleep(3)
+                # Find the input field by placeholder
+                option_3 = driver.find_element(By.ID, 'poll-option-3')
+                # Enter text into the input field
+                option_3.send_keys(parameters.option_3)
+                time.sleep(3)
+            except:
+                pass
+        
+            # Find the Poll duration
+            duration_dropdown = Select(driver.find_element(By.CSS_SELECTOR, '[aria-labelledby="polls-duration-label"]'))
 
-        # Select the option with value "14"
-        duration_dropdown.select_by_value(parameters.poll_duration)
-        time.sleep(3)
-        submit_button =  driver.find_element(By.XPATH, '//span[text()="Done"]')
-        submit_button.click()
-        time.sleep(3)
+            # Select the option with value "14"
+            duration_dropdown.select_by_value(parameters.poll_duration)
+            time.sleep(3)
+            submit_button =  driver.find_element(By.XPATH, '//span[text()="Done"]')
+            submit_button.click()
+            time.sleep(3)
+            
+            #Next section:
+            poll_description = driver.find_element(By.CSS_SELECTOR, '[aria-placeholder="Use #QuestionForGroup while asking a question"]')
+            poll_description.send_keys(parameters.poll_description)
+            
+            submit_button =  driver.find_element(By.XPATH, '//span[text()="Post"]')
+            submit_button.click()
+        except Exception as e:
+            print(e)
+            continue
         
 if __name__ == '__main__':
     #VARIABLES

@@ -5,3 +5,4 @@ option_1 = 'this is the first option'
 option_2 = 'this is the first option'
 option_3 = 'this is the first option'
 poll_duration = "14"
+poll_description= "This is the content"
