@@ -48,10 +48,10 @@ Create the selenium server, open the VNC window and launch the tests, type those
 ```
 ## Screenshot
 
-<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshot/Screenshot_1.png" width="500" />
-<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshot/Screenshot_2.png" width="500" />
-<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshot/Screenshot_3.png" width="500" />
-<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshot/Screenshot_4.png" width="500" />
+<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshots/Screenshot_1.png" width="500" />
+<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshots/Screenshot_2.png" width="500" />
+<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshots/Screenshot_3.png" width="500" />
+<img src="https://github.com/pseudo-r/LinkedinAutoPoll/blob/main/screenshots/Screenshot_4.png" width="500" />
 
 ## Contribution
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
