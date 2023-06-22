@@ -48,6 +48,7 @@ def search_and_send_request():
 
     # Iterate over each group link
     for link in group_links:
+        driver.get('https://www.linkedin.com/groups/')
         try:
             link.click()
             time.sleep(3)
